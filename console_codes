@@ -1,0 +1,62 @@
+
+dotnet new blazoserver -o blazorapp -au Individual
+
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add package Microsoft.AspNetCore.Identity.UI
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+dotnet aspnet-codegenerator identity -h
+
+dotnet aspnet-codegenerator identity -dc blazorapp.Data.ApplicationDbContext -lf
+
+--------------------------------------------------------
+File List:
+Account._StatusMessage
+Account.AccessDenied
+Account.ConfirmEmail
+Account.ConfirmEmailChange
+Account.ExternalLogin
+Account.ForgotPassword
+Account.ForgotPasswordConfirmation
+Account.Lockout
+Account.Login
+Account.LoginWith2fa
+Account.LoginWithRecoveryCode
+Account.Logout
+Account.Manage._Layout
+Account.Manage._ManageNav
+Account.Manage._StatusMessage
+Account.Manage.ChangePassword
+Account.Manage.DeletePersonalData
+Account.Manage.Disable2fa
+Account.Manage.DownloadPersonalData
+Account.Manage.Email
+Account.Manage.EnableAuthenticator
+Account.Manage.ExternalLogins
+Account.Manage.GenerateRecoveryCodes
+Account.Manage.Index
+Account.Manage.PersonalData
+Account.Manage.ResetAuthenticator
+Account.Manage.SetPassword
+Account.Manage.ShowRecoveryCodes
+Account.Manage.TwoFactorAuthentication
+Account.Register
+Account.RegisterConfirmation
+Account.ResetPassword
+Account.ResetPasswordConfirmation
+---------------------------------------------------------------
+
+dotnet aspnet-codegenerator identity -dc blazorapp.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Manage._Layout;Account.Manage._ManageNav;Account.Manage.Index;Account.Manage.PersonalData"
+
+dotnet ef database drop
+
+dotnet ef migrations remove
+
+dotnet ef migrations add InitialCreate
+
+dotnet ef database update
