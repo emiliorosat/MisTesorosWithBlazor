@@ -1,4 +1,4 @@
-# Mis Tesoros con Blazor Server
+# Mis Tesoros
 
 - ASP.Net Core
 - Blazor Server
@@ -9,7 +9,7 @@
 ## Arrancar Proyecto
 
 1. Descargar e instalar dotnet core <https://dotnet.microsoft.com/download>
-2. dotnet restore
-3. dotnet ef database update
+2. ```bash dotnet restore ```
+3. ```bash dotnet ef database update ```
 4. ir a Pages/_Host.cshtml y agregar el api key de google maps
-5. dotnet run
+5. ```bash dotnet run ```
