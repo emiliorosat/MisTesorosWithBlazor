@@ -8,8 +8,12 @@
 
 ## Arrancar Proyecto
 
-1. Descargar e instalar dotnet core <https://dotnet.microsoft.com/download>
-2. ```bash dotnet restore ```
-3. ```bash dotnet ef database update ```
-4. ir a Pages/_Host.cshtml y agregar el api key de google maps
-5. ```bash dotnet run ```
+- Descargar e instalar dotnet core <https://dotnet.microsoft.com/download>
+- - Ir a Pages/_Host.cshtml y agregar el api key de google maps
+- Desde la terminal:
+```bash 
+dotnet restore 
+dotnet ef database update
+dotnet run
+```
+
